@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Путешествие!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <header th:insert="blocks/header :: header"></header>
+        <div class="container mt-5">
+            <h1> Бракор Александра
+                Backend
+                https://t.me/AleksaAlexaB</h1>
+            <h1>  Мещерякова Олеся
+                Team Lead
+                Frontend
+                https://t.me/MeshcheryakovaO</h1>
+            <h1>
+                Батурин Егор
+                Backend
+                https://t.me/Gorgoyle</h1>
+            <h1>  Листопадов Александр Сергеевич
+                Backend
+                https://t.me/Burntwood</h1>
+            <h1>  Поваров Виктор
+                Backend
+                https://t.me/Vi_c_k13</h1>
+            <h1>  Паршин Артем
+                Backend
+                https://t.me/ParshinADM
+            </h1>
+            <h1> Максим
+                Backend/Frontend
+                https://t.me/superMax_10
+
+            </h1>
+            <p th:text="'Привет, ' + ${title} + '!'" />
+        </div>
+        <footer th:insert="blocks/footer :: footer"></footer>
+    </body>
+</html>
+
+

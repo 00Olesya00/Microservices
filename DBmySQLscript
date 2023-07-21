@@ -1,0 +1,58 @@
+DROP DATABASE IF EXISTS tripadvisor;
+
+CREATE DATABASE tripadvisor;
+
+CREATE  TABLE tripadvisor.tour_types (
+	id                   INT UNSIGNED NOT NULL   AUTO_INCREMENT  PRIMARY KEY,
+	name                 VARCHAR(200)  NOT NULL     ,
+	active               TINYINT  NOT NULL DEFAULT (1)
+ ) engine=InnoDB;
+
+CREATE  TABLE tripadvisor.users (
+	id                   BIGINT UNSIGNED NOT NULL   AUTO_INCREMENT  PRIMARY KEY,
+	login                VARCHAR(100)  NOT NULL     ,
+	password             VARCHAR(100)  NOT NULL     ,
+	displayname          VARCHAR(100)  NOT NULL     ,
+	create_date          DATE  NOT NULL DEFAULT (CURRENT_DATE)    ,
+	register_date        DATE       ,
+	reg_confirmed        TINYINT  NOT NULL DEFAULT (0),
+	role_id 			 INT UNSIGNED NOT NULL
+ ) engine=InnoDB;
+
+
+
+CREATE  TABLE tripadvisor.tours (
+	id                   BIGINT UNSIGNED NOT NULL   AUTO_INCREMENT  PRIMARY KEY,
+
+	name 				 VARCHAR(500)  NOT NULL     ,
+	about                VARCHAR(1000)  NOT NULL     ,
+	start_date           DATE  NOT NULL     ,
+	end_date             DATE  NOT NULL     ,
+	departure_location   VARCHAR(2000)  NOT NULL     ,
+	destination_location VARCHAR(2000)  NOT NULL
+
+ ) engine=InnoDB;
+
+CREATE  TABLE tripadvisor.user_details (
+	user_id              BIGINT UNSIGNED NOT NULL     PRIMARY KEY,
+	about                VARCHAR(4000)       ,
+	address              VARCHAR(1000)       ,
+	coordinates          JSON       ,
+	sex                  CHAR(1)       ,
+	birth_date           DATE       ,
+	email                VARCHAR(200)  NOT NULL     ,
+	city_id              BIGINT UNSIGNED
+ ) engine=InnoDB;
+
+CREATE  TABLE tripadvisor.caterings (
+	id                   BIGINT UNSIGNED NOT NULL   AUTO_INCREMENT  PRIMARY KEY,
+	tour_id              BIGINT UNSIGNED NOT NULL     ,
+	name                 VARCHAR(300)  NOT NULL     ,
+	description          TEXT(0)       ,
+	visit_date           DATE  NOT NULL DEFAULT (CURRENT_DATE)    ,
+	rating               SMALLINT UNSIGNED NOT NULL DEFAULT (0)    ,
+	price                DECIMAL
+ ) engine=InnoDB;
+
+
+select* from tripadvisor.tours
