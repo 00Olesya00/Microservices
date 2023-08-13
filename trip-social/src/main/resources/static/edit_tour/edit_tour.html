@@ -1,0 +1,28 @@
+<div class="container mt-5 mb-5" ng-controller =>
+    <h1> Редактирование путешествия</h1>
+
+<!--    так было с тимлифом-->
+    <div method="post">
+        <div ng-show="t in toursPage.content" class = "alert alert-info mt-5">
+
+            <form  novalidate ng-submit="updateTour()">
+                <input type="text" ng-model="t.name" name="name" placeholder="Введите новое название путешествия" class="form-control"><br>
+
+                <textarea  ng-model="t.about" name = "about" placeholder="Введите описание путешествия" class="form-control"></textarea><br>
+
+                <input type="date" ng-model="t.startDate" name = "startDate" placeholder="Введите дату начала путешествия" class="form-control"><br>
+
+                <input type="date" ng-model="t.endDate" name = "endDate" placeholder="Введите дату окончания путешествия" class="form-control"><br>
+
+                <input type="text" ng-model="t.departureLocation" name = "departureLocation" placeholder="Введите место отправления" class="form-control"><br>
+
+                <input type="text" ng-model="t.destinationLocation" name = "destinationLocation" placeholder="Введите пункт назначения" class="form-control"><br>
+
+                <button type="submit" class="btn btn-success" > Обновить</button>
+
+            </form>
+    </div>
+
+</div>
+
+</div>

@@ -1,0 +1,70 @@
+<div>
+    <h1>Путешествия.....</h1>
+    <p></p>
+    <h3>Фильтр</h3>
+    <form novalidate ng-submit="loadTours()">
+        <input class="form-control" type="text" id = "filterName" placeholder="Нaзвание путешествия" ng-model="filter.name_part">
+        <p></p>
+        <input class="form-control" type="date" placeholder="минимальная дата старта" ng-model="filter.min_start_date">
+        <p></p>
+        <input class="form-control" type="date" placeholder="максимальная дата старта" ng-model="filter.max_start_date">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Фильтровать</button>
+    </form>
+
+
+    <h3> Путешествия</h3>
+    {{contextPathTwo}}
+    <nav aria-label="Путешествия">
+        <form novalidate ng-submit="createOrder()">
+        <div ng-repeat="t in toursPage.content" class = "alert alert-info mt-5">
+            <h3>{{t.name}}</h3>
+            <p>{{t.about}}</p>
+            <p>{{t.startDate}}</p>
+
+            <div class="form-group">
+                <label > Комментарии: </label>
+                <p>{{t.comment}}</p>
+            </div>
+
+<!          TODO переходит по ссылке , но не выводит данные-->
+            <div class="form-group">
+
+                <a href="#!/details_tour/{{t.id}} " class="btn btn-warning"  ng-click="showInfoTour(t.id)" >Детальнее</a>
+                <p>{{t.id}}</p>
+            </div>
+
+            <button type="button" class="btn btn-warning" ng-click="showInfoTour(t.id)">Инфо(алерт)</button>
+
+            <button type="button" class="btn btn-danger" ng-click="deleteTourById(t.id)">Удалить</button>
+            <p></p>
+            <div class="form-group">
+                <a href="#!/edit_tour/{{t.id}}" class="btn btn-warning"  >Редактирование</a>
+                <p>{{t.id}}</p>
+            </div>
+
+
+
+        </div>
+        <p></p>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+
+                <li ng-repeat = "p in navList" class="page-item">
+                    <a class="page-link" ng-click = "loadTours(p)">{{p}}</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p></p>
+        <h3>Pagination</h3>
+        </td>
+        <button class="btn btn-primary" ng-click="loadTours(1)">Load First Page</button>
+        <button class="btn btn-primary" ng-click="loadTours(2)">Load Second Page</button>
+        </td>
+        <p></p>
+        <p></p>
+        </form>
+
+    </nav>
+</div>
