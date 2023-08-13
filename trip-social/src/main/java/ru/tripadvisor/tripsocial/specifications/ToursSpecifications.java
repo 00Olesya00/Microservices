@@ -18,7 +18,7 @@ public class ToursSpecifications {
     }
 
     // найти по названию тура
-    public static Specification<Tour> namelike(String namePart) {
+    public static Specification<Tour> nameLike(String namePart) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.like(root.get("name"), String.format("%%%s%%",namePart));
     }
 

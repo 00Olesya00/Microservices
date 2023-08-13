@@ -1,7 +1,7 @@
 package ru.tripadvisor.tripsocial.controllers;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.tripadvisor.tripsocial.converters.TourConverter;
 import ru.tripadvisor.tripsocial.dto.TourDto;
@@ -56,14 +56,14 @@ public class TourController {
         return  tourConverter.entityToDto(tour);
     }
 
+    //редактирование
     @GetMapping("/edit_tour/{id}")
     public TourDto editTour( @PathVariable(value = "id") Long id) {
         Tour tour = tourService.findById(id).orElseThrow(()-> new ResourceNotFoundException("Tour not found, id: " + id));
         return  tourConverter.entityToDto(tour);
     }
 
-
-    // TODO редактирование тура/?
+    // сохранение изменений при редактировании
     @PostMapping("/edit_tour/{id}")
     public TourDto updateTourPost( @PathVariable(value = "id") Long id, @RequestBody TourDto updateTourDto) {
         Tour tour = tourConverter.dtoToEntity(updateTourDto);

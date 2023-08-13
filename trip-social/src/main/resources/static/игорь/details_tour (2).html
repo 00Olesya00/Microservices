@@ -1,0 +1,39 @@
+
+<h1> Детальнее о путешествии</h1>
+        <div ng-app="app" ng-controller="detailsTourController">
+<!--            <div ng-show="t in detailsTour.content"  class="alert alert-info mt-5">-->
+                <b>Название путешествия:</b>
+
+                <h3>{{detailsTour.name}}</h3>
+                <b>Описание:</b>
+                <p>{{detailsTour.about}}</p>
+                <b>Дата начала путешествия:</b>
+                <p>{{detailsTour.startDate}}</p>
+                <b>Дата окончания:</b>
+                <p>{{detailsTour.endDate}}</p>
+                <b>Место отправления:</b>
+                <p>{{detailsTour.departureLocation}}</p>
+                <b>Место прибытия:</b>
+                <p>{{detailsTour.destinationLocation}}</p>
+
+
+
+
+            <div class="form-group">
+                <label > <b> Комментарий:</b> </label>
+                <p text="{{detailsTour.comment}}"/>
+            </div>
+
+            <p> <b> Рейтинг:</b><span text = {{1}}"/ </p>
+<!--//TODO исправить кнопки-->
+                    <button type="button" class="btn btn-warning" href="'/trip-social/tour/' + ${detailsTour.id} + '/edit' ">Редактировать</button>
+                    <button type="button" class="btn btn-danger" ng-click="deleteTourById(detailsTour.id)">Удалить</button>
+            <p></p>
+            <form :action="'/trip-social/tour/'+ ${el.id} + '/add_comment'" method="post">
+                <textarea  name = "comment" placeholder="Напишите  комментарий" class="form-control"></textarea><br>
+
+
+                <button type="submit" class="btn btn-success"> Добавить комментарий</button>
+            </form>
+        </div>
+    </div>

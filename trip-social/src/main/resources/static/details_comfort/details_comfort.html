@@ -1,0 +1,23 @@
+
+<h1> Детальнее о жилье</h1>
+<div ng-app="app" ng-controller="detailsComfortController">
+    <div   class="alert alert-info mt-5">
+<!--           <div  class="alert alert-info mt-5">-->
+        <b>Название жилья:</b>
+        <h3>{{detailsComfort.name}}</h3>
+        <b>Описание:</b>
+        <p>{{detailsComfort.info}}</p>
+        <b>Стоимость проживания за 1 сутки:</b>
+        <p>{{detailsComfort.price}}</p>
+        <b>Дополнительную информацию о цене:</b>
+        <p>{{detailsComfort.price_info}}</p>
+        <b>Ссылка на жилье:</b>
+        <p>{{detailsComfort.url}}</p>
+
+        <p></p>
+        <a href="#!/edit_comfort/{{detailsComfort.id}}" class="btn btn-warning"  >Редактирование!</a>
+        <a  class="btn btn-danger"  ng-click="deleteComfortById(detailComfort.id)" href="#!/comforts" >Удалить</a>
+        <p></p>
+
+    </div>
+</div>

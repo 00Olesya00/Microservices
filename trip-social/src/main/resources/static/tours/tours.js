@@ -15,10 +15,8 @@ angular.module('app').controller('toursController', function ($scope, $http) {
             $scope.toursPage = response.data;
             $scope.navList =$scope.generatePagesIndexes(1, $scope.toursPage.totalPages);
             console.log(response.data);
-
         });
     };
-
 
     $scope.generatePagesIndexes = function (startPage, endPage) {
         let arr = [];
@@ -29,14 +27,6 @@ angular.module('app').controller('toursController', function ($scope, $http) {
     }
 
 
-    $scope.deleteTourById = function (tourId) {
-        console.log('click');
-        $http.delete(contextPath + tourId)
-            .then(function (response) {
-                $scope.loadTours();
-            });
-    };
-
     $scope.showInfoTour = function (tourId) {
         console.log('click');
         $http.get(contextPath + "details_tour/" + tourId)
@@ -46,14 +36,16 @@ angular.module('app').controller('toursController', function ($scope, $http) {
             });
     };
 
-    $scope.editTour = function (tourId) {
+    $scope.deleteTourById = function (tourId) {
         console.log('click');
-        $http.get(contextPath + "edit_tour/" + tourId)
+        $http.delete(contextPath + tourId)
             .then(function (response) {
-                alert(response.data.name)
-                // $scope.loadTours();
+                alert('Удалено безвозвратно');
+                $scope.loadTours();
+
             });
     };
 
+    $scope.loadTours();
     $scope.loadTours();
 });

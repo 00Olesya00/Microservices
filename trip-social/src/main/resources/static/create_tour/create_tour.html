@@ -3,14 +3,18 @@
     <form novalidate ng-submit="createTour()">
         <input type="text" ng-model="newTour.name" placeholder="Введите название путешествия" class="form-control"><br>
         <textarea  ng-model="newTour.about" placeholder="Введите описание путешествия" class="form-control"></textarea><br>
+
         <input type="date" ng-model="newTour.startDate" placeholder="Введите дату начала путешествия" class="form-control"><br>
         <input type="date" ng-model="newTour.endDate" placeholder="Введите дату окончания путешествия" class="form-control"><br>
         <input type="text" ng-model="newTour.departureLocation" placeholder="Введите место отправления" class="form-control"><br>
         <input type="text" ng-model="newTour.destinationLocation" placeholder="Введите пункт назначения" class="form-control"><br>
 
 
-        <button type="submit" class="btn btn-success" > Добавить путешествие</button>
-
+        <a  class="btn btn-success"  ng-click="createTour()" href="#!/tours" >Добавить путешествие!</a>
         <li class="nav-item"><a href="#!/tours" class="nav-link"> Показать список путешествий</a></li>
+
+        <!--        //при нажатии сохраняет и остается в этой же форме-->
+        <!--        <button type="submit" class="btn btn-success" > Добавить путешествие</button>-->
+
     </form>
 </div>
