@@ -1,4 +1,6 @@
 <div>
+
+
     <h1>Путешествия.....</h1>
     <p></p>
     <h3>Фильтр</h3>
@@ -12,22 +14,44 @@
         <button type="submit" class="btn btn-primary">Фильтровать</button>
     </form>
 
+
     <h3> Путешествия</h3>
     {{contextPathTwo}}
     <nav aria-label="Путешествия">
+<!--        <form novalidate ng-submit="createOrder()">-->
         <div ng-repeat="t in toursPage.content" class = "alert alert-info mt-5">
             <h3>{{t.name}}</h3>
             <p>{{t.about}}</p>
             <p>{{t.startDate}}</p>
 
-            <a href="#!/details_tour/{{t.id}} " class="btn btn-warning"  >Детальнее</a>
+            <div class="form-group">
+                <label > Комментарии: </label>
+                <p>{{t.comment}}</p>
+            </div>
+
+<!--           TODO переходит по ссылке , но не выводит данные/ Гаисать правильно ссылку с айдишником->-->
+            <div class="form-group">
+
+                <a href="#!/details_tour/{{t.id}} " class="btn btn-warning" >Детальнее</a>
+                <p>{{t.id}}</p>
+            </div>
+
             <button type="button" class="btn btn-warning" ng-click="showInfoTour(t.id)">Инфо(алерт)</button>
-            <a href="#!/edit_tour/{{t.id}}" class="btn btn-warning"  >Редактирование</a>
-            <a  class="btn btn-danger"  ng-click="deleteTourById(t.id)" href="#!/tours" >Удалить</a>
+
+            <button type="button" class="btn btn-danger" ng-click="deleteTourById(t.id)">Удалить</button>
+            <p></p>
+            <div class="form-group">
+                <a href="#!/edit_tour/{{t.id}}" class="btn btn-warning"  >Редактирование</a>
+                <p>{{t.id}}</p>
+            </div>
+
+
+
         </div>
         <p></p>
         <nav aria-label="Page navigation example">
             <ul class="pagination">
+
                 <li ng-repeat = "p in navList" class="page-item">
                     <a class="page-link" ng-click = "loadTours(p)">{{p}}</a>
                 </li>
@@ -42,5 +66,8 @@
         </td>
         <p></p>
         <p></p>
+<!--        </form>-->
+
+
     </nav>
 </div>

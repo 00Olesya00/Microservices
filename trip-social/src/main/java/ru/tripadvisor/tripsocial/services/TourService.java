@@ -20,38 +20,39 @@ public class TourService {
 
         Specification<Tour> specification = Specification.where(null);
         //select t from Tour t where true
-
         if (minStartDate != null){
             specification = specification.and(ToursSpecifications.startDateGreaterOrElseThan(minStartDate));
             //select t from Tour t where true AND t.startDate > minStartDate
         }
         if (maxStartDate != null){
             specification = specification.and(ToursSpecifications.startDateLessThenOrEqualsThan(maxStartDate));
-
             //select t from Tour t where true AND t.startDate > minStartDate AND t.startDate>maxStartDate
         }
         if (namePart != null){
-            specification = specification.and(ToursSpecifications.namelike(namePart));
-
+            specification = specification.and(ToursSpecifications.nameLike(namePart));
             // select t from Tour t where true AND t.startDate > minStartDate AND t.startDate < maxStartDate AND t.name LIKE %namePart
         }
         return tourRepository.findAll(specification, PageRequest.of(page-1,5));
 
     }
     public Optional<Tour> findById(Long id) {
+
         return tourRepository.findById(id);
     }
+
     public boolean  existsById(Long id) {
+
         return tourRepository.existsById(id);
     }
 
     public void deleteById(Long id) {
+
         tourRepository.deleteById(id);
     }
 
     public Tour saveNewTour(Tour newTour) {
-       return tourRepository.save(newTour);
 
+       return tourRepository.save(newTour);
     }
 
     public Tour updateTour(Long id, Tour updatedTour) {
@@ -66,7 +67,7 @@ public class TourService {
         return tourRepository.save(tour);
     }
 
-     public Iterable<Tour> findAll(Integer page) {
+    public Iterable<Tour> findAll(Integer page) {
         Specification<Tour> specification = Specification.where(null);
         Iterable<Tour> tours =  tourRepository.findAll(specification, PageRequest.of(page-1,5));
         return tours;

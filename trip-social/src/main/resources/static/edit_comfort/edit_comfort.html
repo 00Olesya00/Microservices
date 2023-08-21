@@ -1,0 +1,26 @@
+
+<h1> Редактирование жилья</h1>
+<div ng-app="app" ng-controller="editComfortController">
+    <div class = "alert alert-info mt-5">
+        <form  novalidate ng-submit="updateComfort()">
+            <div>
+                <label>Название жилья:</label> <input type="text" ng-model="editComfort.name"  name="name" placeholder="Введите название"  class="form-control"><br>
+            </div>
+            <div>
+                <label>Описание жилья:</label> <textarea  ng-model="editComfort.info" name = "info" placeholder="Введите описание " class="form-control"></textarea><br>
+            </div>
+            <div>
+                <label>Стоимость проживания за 1 сутки:</label> <input type="number"  step="any" ng-model="editComfort.price" name = "price" placeholder="Введите стоимость проживания за 1 сутки" class="form-control"><br>
+            </div>
+            <div>
+                <label>Дополнительную информацию о цене:</label> <input type="text" ng-model="editComfort.price_info" name = "price_info" placeholder="Введите дополнительную информацию о цене" class="form-control"><br>
+            </div>
+            <div>
+                <label>Ссылка на жилье:</label> <input type="text" ng-model="editComfort.url" name = "url" placeholder="Введите пункт назначения" class="form-control"><br>
+            </div>
+
+            <a   class="btn btn-success"    ng-click="updateComfort(editComfort.id)"      href="#!/details_comfort/{{editComfort.id}}" >Обновить!</a>
+
+           </form>
+    </div>
+</div>
