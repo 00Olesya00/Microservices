@@ -12,8 +12,6 @@ import javax.persistence.ManyToOne;
 @Component
 public class SightConverter {
 
-
-    //дто записываем в сущность
     public Sight dtoToEntity(SightDto sightDto){
         return new Sight(sightDto.getName(),
                 sightDto.getLocation(),
@@ -25,7 +23,6 @@ public class SightConverter {
                 sightDto.getSightCategory());
     }
 
-    // сущность перегоняем в дто
     public SightDto entityToDto(Sight sight){
         return new SightDto(sight.getId(),
                 sight.getName(),

@@ -11,8 +11,6 @@ import javax.persistence.OneToMany;
 import java.sql.Date;
 import java.util.List;
 
-// в этом классе мы показываем только поля, которые хотим, что бы были доступны для пользователей
-//класс для передачи данных
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -51,14 +49,4 @@ public class TourDto {
         this.caterings = tour.getCaterings();
     }
 
-//    public TourDto(Tour tour) {
-//        this.id = tour.getId();
-//        this.name = tour.getName();
-//        this.about = tour.getAbout();
-//        this.startDate = tour.getStartDate();
-//        this.endDate = tour.getEndDate();
-//        this.departureLocation = tour.getDepartureLocation();
-//        this.destinationLocation =tour.getDestinationLocation();
-//
-//    }
 }

@@ -1,6 +1,7 @@
 package ru.tripadvisor.tripsocial.controllers;
 
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import ru.tripadvisor.tripsocial.converters.CateringConverter;

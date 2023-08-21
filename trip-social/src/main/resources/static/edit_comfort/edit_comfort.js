@@ -15,15 +15,12 @@ angular.module('app').controller('editComfortController', function ($scope, $htt
 
     $scope.updateComfort = function (){
         console.log($scope.updateComfort);
-
         $http.post(contextPath + '/edit_comfort/' + $routeParams.comfortId, $scope.editComfort)
             .then(function(response) {
-                    // Обработка успешного обновления
                     console.log("Данные о жилье успешно обновлены");
                     alert('Жилье изменено');
                 },
                 function successCallback(response) {
-                    // Обработка ошибок при обновлении
                     console.log("Ошибка при обновлении данных о жилье")
                     alert(response.data.messages);
                 });

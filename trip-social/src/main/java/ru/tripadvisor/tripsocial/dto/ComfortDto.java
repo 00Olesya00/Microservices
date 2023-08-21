@@ -20,14 +20,6 @@ public class ComfortDto {
     private Tour tour;
 
 
-//    public ComfortDto(Comfort comfort) {
-//        this.id = comfort.getId();
-//        this.name = comfort.getName();
-//        this.price =comfort.getPrice();
-//        this.info= comfort.getInfo();
-//        this.url = comfort.getUrl();
-//    }
-
 
     public ComfortDto(String name, Double price, String price_info, String info, String url, Tour tour) {
         this.name = name;

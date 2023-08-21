@@ -21,15 +21,6 @@ public class Catering {
     private Tour tour;
 
 
-//    public Catering(String name, String description, Date visitDate, Integer rating, Double price) {
-//        this.name = name;
-//        this.description = description;
-//        this.visitDate = visitDate;
-//        this.rating = rating;
-//        this.price = price;
-//
-//    }
-
     public Catering(String name, String description, Date visitDate, Integer rating, Double price, Tour tour) {
         this.name = name;
         this.description = description;
