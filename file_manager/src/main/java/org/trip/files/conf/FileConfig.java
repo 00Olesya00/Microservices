@@ -19,7 +19,6 @@ public class FileConfig {
         MultipartConfigFactory factory = new MultipartConfigFactory();
         DataSize max = DataSize.ofMegabytes(100L);
         factory.setMaxFileSize(max);
-        factory.setMaxFileSize(max);
         return factory.createMultipartConfig();
     }
 }

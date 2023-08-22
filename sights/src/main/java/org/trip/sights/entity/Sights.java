@@ -1,5 +1,6 @@
 package org.trip.sights.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Table(name = "sights")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Sights {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,4 +40,12 @@ public class Sights {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @Column(name = "coordinates")
+    private String coordinates;
+
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "tour_id")
+    private Long tour_id;
 }

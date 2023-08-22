@@ -60,7 +60,7 @@ public class FileUploadService {
             String extension = filename.substring(filename.lastIndexOf("."));
             if (part.getSize() > MAX_FILE_SIZE) {
                 throw new IllegalArgumentException("File size exceeds the maximum limit of 50MB");
-            } else if (extensionsRepository.findByExtension(extension) != null) {
+            } else if (extensionsRepository.findByExtension(extension) == null) {
                 throw new IllegalArgumentException("You cannot upload file with extension: " + extension);
             }
             log.info("Content type: " + contentType);
