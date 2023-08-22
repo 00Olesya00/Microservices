@@ -35,7 +35,7 @@ public class DataBase {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("org.trip.files");
+        em.setPackagesToScan("org.trip.sights");
         JpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(adapter);
         em.setJpaProperties(additionalProperties());

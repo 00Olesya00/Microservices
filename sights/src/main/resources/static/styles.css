@@ -1,0 +1,107 @@
+html{
+    background: url("background.jpeg") no-repeat center center fixed; 
+	background-size: cover;
+    min-height:100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100px;
+	
+}
+
+body{
+	background-color: transparent;
+}
+
+#registration-form{
+	max-width: 1000px;
+	margin: 150px auto;
+	/*color: #fff;*/
+    
+}
+
+#registration-form .image{
+	float:left;
+	
+	background-image: url("Img/Travel\ _Story-1.png");
+	height: 1100px;
+	width: 50%;
+	background-size: cover;
+	background-position: 25%;
+	
+}
+
+#registration-form .frm{
+	float:right;
+	height: 1100px;
+    width: 50%;
+    min-width: 250px;
+	padding: 0 35px;
+    background-size: 100% 100%;
+	font-size:1vw;
+	
+    /*background-color: #b6a49a;*/
+}
+
+#registration-form h1{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font-size:2vw;
+}
+
+#registration-form .form-control{
+	width: 100%;
+	padding: 12px 20px;
+	height: auto;
+
+
+}
+/* Floating column for labels: 25% width */
+.col-25 {
+	
+	max-width: 600px
+
+  }
+
+
+@media screen and (max-width: 700px){
+	#registration-form .image{
+		width: 30%;
+	    background-position: 60%;
+	}
+/**/
+	#registration-form .frm{
+		width: 70%;
+	}
+
+	#registration-form .form-control{
+		width: 100%;
+		font-size:1vw;
+		color: #b6a49a;
+		
+	}
+
+
+	
+}
+
+@media screen and (max-width: 500px){
+	#registration-form .image{
+		display: none;
+	}
+
+	#registration-form .frm{
+		width: 100%;
+	}
+
+	#registration-form h1{
+		text-align: center;
+	}
+
+	#registration-form .btn{
+		width: 100%;
+		margin-top: 4px;
+		color: #b6a49a;
+	}
+}

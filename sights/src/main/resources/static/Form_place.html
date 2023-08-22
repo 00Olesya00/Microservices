@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/uploadform.css">
+    <script type="text/javascript" src="js/form_place.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="container" id="registration-form" >
+        <div class="image"></div>
+       
+        <div class="frm" >
+        
+            <h1>Достопримечательность</h1>
+            <form ng-controller="addPlace" id="addPlace">
+                <div  style="font-size:1vw">
+                <div class="form-group">
+                    <label for="username">Название:</label>
+                    <input type="text" name="title" class="form-control" id="username" placeholder="Введите название достопримечательности">
+                </div>
+                <div class="form-group">
+                    <label for="text">Категория:</label>
+                    <input type="text" name="category"  class="form-control" id="text"  placeholder="Введите категорию достопримечательности" >
+                </div>
+                <div class="form-group">
+                    <label for="text">Метоположение:</label>
+                    <input type="text" name="location" class="form-control" id="text" placeholder="Укажите местоположение">
+                </div>
+                <div class="form-group ">
+<!--                    <label for="url">Координаты:</label>-->
+<!--                    <input type="url" name="url" id="url" class="form-control" placeholder="https://.." pattern="https://.*" size="30" required />-->
+                    <div class="form-group ">
+                        <label for="url">Адрес сайта о достопримечательности</label>
+                        <input  type="url" name="url" id="url" class="form-control" placeholder="https://.." pattern="https://.*" size="30" required />
+    
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="subject">Описание</label>
+                  <textarea id="subject" name="description" class="form-control col-25 " name="subject" placeholder="Опишите достопримечательность" style="height:200px"></textarea>
+                    
+                
+                <div class="form-group">
+                    <label for="number">Цена посещения :</label>
+                    <input type="number" name="price" class="form-control" id="number" placeholder="Укажите цену">
+                
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="text">Как ведется расчет</label>
+              <input type="text" name="calc" class="form-control" id="text" placeholder="">
+          </div>
+                <div class="form-group" id="upload-container" method="POST" enctype="multipart/form-data" action="http://localhost:8189/upload">
+                    <img id="upload-image" src="Img/upload.svg">
+                    <div>
+                        <input id="file-input" type="file" name="file"  multiple>
+                        <label for="file-input">Выберите файл</label>
+                        <span>или перетащите его сюда</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg">Сохранить</button>
+                </div>
+            </div>
+            </form>
+            <sub>2023 TripAdvisor. Все права защищены.</sub>
+        </div>
+    </div>
+</body>
+
+</html>
