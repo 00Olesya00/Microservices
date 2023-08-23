@@ -4,29 +4,33 @@
     <div class = "alert alert-info mt-5">
 
         <form  novalidate ng-submit="updateTour()">
-
             <div>
-                <label>Название путешествия:</label> <input type="text" ng-model="editTour.name"  name="name" placeholder="Введите описание путешествия"  class="form-control"><br>
+                <label>Название путешествия:</label>
+                <input type="text" ng-model="editTour.name"  name="name" placeholder="Введите описание путешествия"  class="form-control"><br>
             </div>
             <div>
-                <label>Описание путешествия:</label> <textarea  ng-model="editTour.about" name = "about" placeholder="Введите описание путешествия" class="form-control"></textarea><br>
+                <label>Описание путешествия:</label>
+                <textarea  ng-model="editTour.about" name = "about" placeholder="Введите описание путешествия" class="form-control"></textarea><br>
             </div>
-<!--       TODO не загружает дату-->
+            <!--               TODO не показывает дату?-->
             <div>
-                <label>Дата начала путешествия:</label> <input type="date" ng-model="editTour.startDate" name = "startDate" placeholder="Введите дату начала путешествия" class="form-control"><br>
-            </div>
-            <div>
-                <label>Дата окончания путешествия:</label>  <input type="date" ng-model="editTour.endDate" name = "endDate" placeholder="Введите дату окончания путешествия" class="form-control"><br>
-            </div>
-            <div>
-                <label>Пункт отправления путешествия:</label> <input type="text" ng-model="editTour.departureLocation" name = "departureLocation" placeholder="Введите место отправления" class="form-control"><br>
+                <label>Дата начала путешествия:</label>
+                <input type="date" ng-model="editTour.startDate" name = "startDate" placeholder="Введите дату начала путешествия" class="form-control"><br>
             </div>
             <div>
-                <label>Путкт назначения путешествия:</label> <input type="text" ng-model="editTour.destinationLocation" name = "destinationLocation" placeholder="Введите пункт назначения" class="form-control"><br>
+                <label>Дата окончания путешествия:</label>
+                <input type="date" ng-model="editTour.endDate" name = "endDate" placeholder="Введите дату окончания путешествия" class="form-control"><br>
             </div>
-
+            <div>
+                <label>Пункт отправления путешествия:</label>
+                <input type="text" ng-model="editTour.departureLocation" name = "departureLocation" placeholder="Введите место отправления" class="form-control"><br>
+            </div>
+            <div>
+                <label>Пункт назначения путешествия:</label>
+                <input type="text" ng-model="editTour.destinationLocation" name = "destinationLocation" placeholder="Введите пункт назначения" class="form-control"><br>
+            </div>
             <a   class="btn btn-success"    ng-click="updateTour(editTour.id)"      href="#!/details_tour/{{editTour.id}}" >Обновить!</a>
-
         </form>
+
     </div>
 </div>

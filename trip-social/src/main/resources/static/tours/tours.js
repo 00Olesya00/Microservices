@@ -26,7 +26,6 @@ angular.module('app').controller('toursController', function ($scope, $http) {
         return arr;
     }
 
-
     $scope.showInfoTour = function (tourId) {
         console.log('click');
         $http.get(contextPath + "details_tour/" + tourId)
@@ -35,7 +34,6 @@ angular.module('app').controller('toursController', function ($scope, $http) {
                 // $scope.loadTours();
             });
     };
-
     $scope.deleteTourById = function (tourId) {
         console.log('click');
         $http.delete(contextPath + tourId)
@@ -46,6 +44,5 @@ angular.module('app').controller('toursController', function ($scope, $http) {
             });
     };
 
-    $scope.loadTours();
     $scope.loadTours();
 });

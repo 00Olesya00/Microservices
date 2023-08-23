@@ -7,7 +7,6 @@ import ru.tripadvisor.tripsocial.entities.Catering;
 @Component
 public class CateringConverter {
 
-    //дто записываем в сущность
     public Catering dtoToEntity(CateringDto cateringDto){
         return new Catering(cateringDto.getName(),
                 cateringDto.getDescription(),
@@ -17,7 +16,6 @@ public class CateringConverter {
                 cateringDto.getTour());
     }
 
-    // сущность перегоняем в дто
     public CateringDto entityToDto(Catering catering){
         return new CateringDto(catering.getId(),
                 catering.getName(),

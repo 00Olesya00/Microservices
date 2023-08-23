@@ -9,14 +9,6 @@ import java.util.List;
 @Component
 public class TourConverter {
 
-    private User user;
-    private TourType tourType;
-    private Status status;
-    private List<Sight> sights;
-    private List<Comfort> comforts;
-    private List<Catering> caterings;
-
-    //дто записываем в сущность
     public Tour dtoToEntity(TourDto tourDto){
         return new Tour(tourDto.getName(),
                 tourDto.getAbout(),
@@ -32,7 +24,6 @@ public class TourConverter {
                 tourDto.getCaterings());
     }
 
-    // сущность перегоняем в дто
     public TourDto entityToDto(Tour tour){
         return new TourDto(tour.getId(),
                 tour.getName(),

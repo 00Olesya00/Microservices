@@ -7,8 +7,6 @@ import ru.tripadvisor.tripsocial.entities.Comfort;
 @Component
 public class ComfortConverter {
 
-
-    //дто записываем в сущность
     public Comfort dtoToEntity(ComfortDto comfortDto){
         return new Comfort(comfortDto.getName(),
                 comfortDto.getPrice(),
@@ -18,7 +16,7 @@ public class ComfortConverter {
                 comfortDto.getTour());
     }
 
-    // сущность перегоняем в дто
+
     public ComfortDto entityToDto(Comfort comfort){
         return new ComfortDto(comfort.getId(),
                 comfort.getName(),
