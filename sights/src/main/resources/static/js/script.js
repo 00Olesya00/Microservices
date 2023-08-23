@@ -52,6 +52,8 @@ $(document).ready(function(){
 			contentType: false,
 			processData: false,
 			success: function(data) {
+			    document.getElementById('avatar').value=data;
+			    document.forms[0].submit();
 				alert ('Файлы были успешно загружены!');
 			}
 		});

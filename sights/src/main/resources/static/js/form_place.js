@@ -1,13 +1,14 @@
 form = document.getElementById('addPlace');
 url = 'http://localhost:8190/addPlace';
+console.log('Форма: ' + form)
 
-async function retriveFormValue(event) {
+async function retrieveFormValue(event) {
 	event.preventDefault();
 	
 	const title = form.querySelector(' [name="title"] ').value,
 		category = form.querySelector(' [name="category"] ').value,
 		location = form.querySelector(' [name="location"] ').value,
-		url = form.querySelector(' [name="url"] ').value,
+		link = form.querySelector(' [name="link"] ').value,
 		description = form.querySelector(' [name="description"] ').value,
 		price = form.querySelector(' [name="price"] ').value,
 		calc = form.querySelector(' [name="calc"] ').value,
@@ -17,7 +18,7 @@ async function retriveFormValue(event) {
 			title: title,
 			category: category,
 			location: location,
-			url: url,
+			link: link,
 			description: description,
 			price: price,
 			calc: calc,
@@ -40,4 +41,4 @@ async function retriveFormValue(event) {
 	
 }
 
-form.addEventListener('submit', retriveFormValue);
+form.addEventListener('submit', retrieveFormValue);
