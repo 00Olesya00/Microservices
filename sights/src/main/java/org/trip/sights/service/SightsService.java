@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.trip.sights.entity.Sights;
 import org.trip.sights.entity.SightsDto;
+import org.trip.sights.repository.CategoryRepository;
 import org.trip.sights.repository.SightsRepository;
 
 @Slf4j
@@ -13,10 +14,20 @@ public class SightsService {
 
     @Autowired
     SightsRepository sightsRepository;
+    @Autowired
+    CategoryRepository categoryRepository;
 
     public String addPlace(SightsDto sightsDto) {
-        Sights sights = sightsDto.toEntity();
+        log.info(sightsDto.toString());
+        Sights sights = new Sights();
+        sights = sightsDto.toEntity();
+        sights.setCategory(categoryRepository.findByName(sightsDto.getCategory()));
         sightsRepository.save(sights);
-        return "sights added";
+        return "sight added";
     }
+
+    public String deletePlace(String name) {
+
+        sightsRepository.deleteByName(name);
+        return "sight deleted";}
 }

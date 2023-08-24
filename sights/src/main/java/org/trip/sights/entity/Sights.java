@@ -48,4 +48,16 @@ public class Sights {
 
     @Column(name = "tour_id")
     private Long tour_id;
+
+    public Sights(Long id, String name, String description, Long price, String priceInfo, String url, String coordinates, String location, Long tourId) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.price_info = priceInfo;
+        this.url = url;
+        this.coordinates = coordinates;
+        this.location = location;
+        this.tour_id = tourId;
+    }
 }

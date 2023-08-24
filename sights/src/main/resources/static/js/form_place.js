@@ -13,15 +13,15 @@ async function retrieveFormValue(event) {
 		price = form.querySelector(' [name="price"] ').value,
 		calc = form.querySelector(' [name="calc"] ').value,
 		avatar = form.querySelector(' [name="avatar"] ').value;
-		
+
 		const sight = {
-			title: title,
+			name: title,
 			category: category,
 			location: location,
-			link: link,
+			url: link,
 			description: description,
 			price: price,
-			calc: calc,
+			price_info: calc,
 			avatar: avatar
 		};
 		console.log('sight', sight);

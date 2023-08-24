@@ -6,4 +6,5 @@ import org.trip.sights.entity.Sights;
 
 @Repository
 public interface SightsRepository extends JpaRepository<Sights, Long> {
+    void deleteByName(String name);
 }
