@@ -21,6 +21,8 @@ public class SightDto {
     //    private String coordinates;
     private String description; //описание
     private Double price;
+
+    private String coordinates;
     private String price_info;
     private String url;
     private Tour tour;
@@ -32,6 +34,7 @@ public class SightDto {
         this.name = sight.getName();
         this.location =sight.getLocation();
         this.price = sight.getPrice();
+        this.coordinates = sight.getCoordinates();
         this.price_info = sight.getPrice_info();
         this.url = sight.getUrl();
         this.tour = sight.getTour();

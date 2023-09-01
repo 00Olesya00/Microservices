@@ -1,0 +1,13 @@
+<div class="container mt-5 mb-5">
+    <h1> Добавление общепита</h1>
+    <form novalidate ng-submit="createCatering()">
+        <input type="text" ng-model="newCatering.name" placeholder="Введите название общепита" class="form-control"><br>
+        <textarea  ng-model="newCatering.description" placeholder="Введите описание общепита" class="form-control"></textarea><br>
+        <input type="date" ng-model="newCatering.visitDate" placeholder="Введите дату посещения" class="form-control"><br>
+        <input type="number"   ng-model="newCatering.rating" placeholder="Поставьте оценку от 1 до 5" class="form-control"><br>
+        <input type="number"  step="any" ng-model="newCatering.price" placeholder="Введите стоимость  за 1 человека" class="form-control"><br>
+
+        <a  class="btn btn-success"  ng-click="createCatering()" href="#!/caterings" >Добавить !</a>
+        <li class="nav-item"><a href="#!/caterings" class="nav-link"> Показать список общепита</a></li>
+    </form>
+</div>

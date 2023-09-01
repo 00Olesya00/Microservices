@@ -1,0 +1,26 @@
+
+<h1> Детальнее о достопримечательности</h1>
+<div ng-app="app" ng-controller="detailsSightController">
+    <div   class="alert alert-info mt-5">
+
+        <b>Название достопримечательности:</b>
+        <h3>{{detailsSight.name}}</h3>
+        <b>Описание достопримечательности:</b>
+        <p>{{detailsSight.description}}</p>
+        <b>Место нахождения достопримечательности:</b>
+        <p>{{detailsSight.location}}</p>
+        <b>Координаты:</b>
+        <p>{{detailsSight.coordinates}}</p>
+        <b>Цена:</b>
+        <p>{{detailsSight.price}}</p>
+        <b>Информация о цене:</b>
+        <p>{{detailsSight.price_info}}</p>
+        <b>Ссылка на достопримечательность:</b>
+        <p>{{detailsSight.url}}</p>
+
+        <p></p>
+        <a href="#!/edit_sight/{{detailsSight.id}}" class="btn btn-warning" >Редактирование!</a>
+        <a  class="btn btn-danger"  ng-click="deleteSightById(detailSight.id)" href="#!/sights" >Удалить</a>
+        <p></p>
+    </div>
+</div>

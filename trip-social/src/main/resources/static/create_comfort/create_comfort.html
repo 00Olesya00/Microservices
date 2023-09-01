@@ -2,13 +2,9 @@
     <h1> Добавление жилья</h1>
     <form novalidate ng-submit="createComfort()">
         <input type="text" ng-model="newComfort.name" placeholder="Введите название жилья" class="form-control"><br>
-
         <textarea  ng-model="newComfort.info" placeholder="Введите описание жилья" class="form-control"></textarea><br>
-
         <input type="number"  step="any" ng-model="newComfort.price" placeholder="Введите стоимость проживания за 1 сутки" class="form-control"><br>
-
         <input type="text" ng-model="newComfort.price_info" placeholder="Введите дополнительную информацию о цене" class="form-control"><br>
-
         <input type="text" ng-model="newComfort.url" placeholder="Введите ссылку на жилье" class="form-control"><br>
 
         <a  class="btn btn-success"  ng-click="createComfort()" href="#!/comforts" >Добавить жилье!</a>

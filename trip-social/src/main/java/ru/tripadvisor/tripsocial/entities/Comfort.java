@@ -10,11 +10,22 @@ public class Comfort {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "price")
     private Double price;
+
+    @Column(name = "price_info")
     private String price_info;
+
+    @Column(name = "info")
     private String info;
+
+    @Column(name = "url")
     private String url;
 
     @ManyToOne

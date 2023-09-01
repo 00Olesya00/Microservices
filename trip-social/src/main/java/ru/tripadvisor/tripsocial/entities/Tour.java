@@ -11,16 +11,27 @@ import java.util.List;
 public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "about")
     private String about;
+
+    @Column(name = "start_date")
     private Date startDate;
+
+    @Column(name = "end_date")
     private Date endDate;
 
     //    Точка отправления (адрес)
+    @Column(name = "departure_location")
     private String departureLocation;
 
     //    Точка назначения (адрес)
+    @Column(name = "destination_location")
     private String destinationLocation;
 
     @ManyToOne
