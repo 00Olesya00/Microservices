@@ -1,0 +1,22 @@
+
+<h1> Детальнее об обшепите</h1>
+<div ng-app="app" ng-controller="detailsCateringController">
+    <div   class="alert alert-info mt-5">
+
+        <b>Название общепита:</b>
+        <h3>{{detailsCatering.name}}</h3>
+        <b>Описание:</b>
+        <p>{{detailsCatering.description}}</p>
+        <b> Дата посещения:</b>
+        <p>{{detailsCatering.visitDate}}</p>
+        <b>Стоимость на 1 человека:</b>
+        <p>{{detailsCatering.price}}</p>
+            <b>Оценка:</b>
+            <p>{{detailsCatering.rating}}</p>
+
+        <p></p>
+        <a href="#!/edit_catering/{{detailsCatering.id}}" class="btn btn-warning"  >Редактирование!</a>
+        <a  class="btn btn-danger"  ng-click="deleteCateringById(detailsCatering.id)" href="#!/caterings" >Удалить</a>
+        <p></p>
+    </div>
+</div>

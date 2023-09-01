@@ -3,23 +3,81 @@
     <form novalidate ng-submit="createTour()">
         <input type="text" ng-model="newTour.name" placeholder="Введите название путешествия" class="form-control"><br>
         <textarea  ng-model="newTour.about" placeholder="Введите описание путешествия" class="form-control"></textarea><br>
-
         <input type="date" ng-model="newTour.startDate" placeholder="Введите дату начала путешествия" class="form-control"><br>
         <input type="date" ng-model="newTour.endDate" placeholder="Введите дату окончания путешествия" class="form-control"><br>
         <input type="text" ng-model="newTour.departureLocation" placeholder="Введите место отправления" class="form-control"><br>
         <input type="text" ng-model="newTour.destinationLocation" placeholder="Введите пункт назначения" class="form-control"><br>
 
-        <li class="nav-item"><a href="#!/create_catering" class="nav-link">Добавить общепит</a></li>
+        <p></p>
+        <p>
 
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Форма для добавления достопримечательности
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <form novalidate ng-submit="createSight()">
 
-        <a  class="btn btn-success"  ng-click="createTour()" href="#!/tours" >Создать путешествие!</a>
+                    <input type="text" ng-model="newSight.name" placeholder="Введите название достопримечательности" class="form-control"><br>
+                    <textarea  ng-model="newSight.description" placeholder="Введите описание путешествия" class="form-control"></textarea><br>
+                    <input type="text" ng-model="newSight.location" placeholder="Введите место находждения достопримечательности" class="form-control"><br>
+                    <input type="number" step="any" ng-model="newSight.price" placeholder="Введите цену" class="form-control"><br>
+                    <input type="text" ng-model="newSight.price_info" placeholder="Введите информацию о цене" class="form-control"><br>
+                    <input type="text" ng-model="newSight.url" placeholder="Введите ссылку на достопримечательность" class="form-control"><br>
+
+                    <a  class="btn btn-success"     ng-click="createSight()"  >Сохранить достопримечательность!</a>
+                </form>
+            </div>
+        </div>
+        <p></p>
+        <p>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                Форма для добавления жилья
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample1">
+            <div class="card card-body">
+                <form novalidate ng-submit="createComfort()">
+
+                    <input type="text" ng-model="newComfort.name" placeholder="Введите название жилья" class="form-control"><br>
+                    <textarea  ng-model="newComfort.info" placeholder="Введите описание жилья" class="form-control"></textarea><br>
+                    <input type="number"  step="any" ng-model="newComfort.price" placeholder="Введите стоимость проживания за 1 сутки" class="form-control"><br>
+                    <input type="text" ng-model="newComfort.price_info" placeholder="Введите дополнительную информацию о цене" class="form-control"><br>
+                    <input type="text" ng-model="newComfort.url" placeholder="Введите ссылку на жилье" class="form-control"><br>
+
+                    <a  class="btn btn-success"     ng-click="createComfort()"  >Сохранить жилье</a>
+                </form>
+            </div>
+        </div>
+        <p></p>
+        <p>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample1">
+                Форма для добавления общепита
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+                <form novalidate ng-submit="createCatering()">
+                    <input type="text" ng-model="newCatering.name" placeholder="Введите название общепита" class="form-control"><br>
+                    <textarea  ng-model="newCatering.description" placeholder="Введите описание общепита" class="form-control"></textarea><br>
+                    <input type="date" ng-model="newCatering.visitDate" placeholder="Введите дату посещения" class="form-control"><br>
+                    <input type="number"   ng-model="newCatering.rating" placeholder="Поставьте оценку от 1 до 5" class="form-control"><br>
+                    <input type="number"  step="any" ng-model="newCatering.price" placeholder="Введите стоимость  за 1 человека" class="form-control"><br>
+<!--TODO исправить привязку id-->
+                            <select  ng-model="newCatering.tour" required>
+                                <option ng-repeat="tour in tours" value="{{tour.id}}"  >  </option>
+                            </select><br><br>
+
+                    <a  class="btn btn-success"  ng-click="createCatering()" href="#!/create_tour" >Сохранить общепит !</a>
+                </form>
+            </div>
+        </div>
+        <p></p>
+        <a  class="btn btn-success"  ng-click="createTour()"  href="#!/tours" >Сохранить путешествие!</a>
         <li class="nav-item"><a href="#!/tours" class="nav-link"> Показать список путешествий</a></li>
 
-        <!--        //при нажатии сохраняет и остается в этой же форме-->
-        <!--        <button type="submit" class="btn btn-success" > Добавить путешествие</button>-->
-
-
     </form>
-
-
 </div>

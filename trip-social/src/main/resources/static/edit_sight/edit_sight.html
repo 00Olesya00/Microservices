@@ -1,0 +1,39 @@
+
+<h1> Редактирование достопримечательности</h1>
+<div ng-app="app" ng-controller="editSightController">
+    <div class = "alert alert-info mt-5">
+        <form  novalidate ng-submit="updateSight()">
+            <div>
+                <label>Название достопримечательности:</label>
+                <input type="text" ng-model="editSight.name"  name="name" placeholder="Введите название"  class="form-control"><br>
+            </div>
+            <div>
+                <label>Описание достопримечательности:</label>
+                <textarea  ng-model="editSight.description" name = "description" placeholder="Введите описание " class="form-control"></textarea><br>
+            </div>
+            <div>
+                <label>Адрес локации достопримечательности:</label>
+                <input  ng-model="editSight.location" name = "location" placeholder="Введите новый адрес локации " class="form-control"></input><br>
+            </div>
+            <div>
+                <label>Координаты:</label>
+                <input  ng-model="editSight.coordinates" name = "coordinates" placeholder="Координаты " class="form-control"></input><br>
+            </div>
+            <div>
+                <label>Цена:</label>
+                <input type="number"  step="any" ng-model="editSight.price" name = "price" placeholder="Введите новую цену" class="form-control"><br>
+            </div>
+            <div>
+                <label>Дополнительную информацию о цене:</label>
+                <input type="text" ng-model="editSight.price_info" name = "price_info" placeholder="Введите дополнительную информацию о цене" class="form-control"><br>
+            </div>
+            <div>
+                <label>Ссылка на достопримечательность:</label>
+                <input type="text" ng-model="editSight.url" name = "url" placeholder="Введите новую ссылку на достопримечательность" class="form-control"><br>
+            </div>
+
+            <a   class="btn btn-success"    ng-click="updateSight(editSight.id)"      href="#!/details_sight/{{editSight.id}}" >Обновить!</a>
+
+           </form>
+    </div>
+</div>

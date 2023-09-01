@@ -1,3 +1,5 @@
+
+
 angular.module('app').controller('createComfortController', function ($scope, $http) {
     const contextPath = 'http://localhost:8192/trip-social/api/v1/comforts';
 

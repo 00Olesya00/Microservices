@@ -9,11 +9,22 @@ import java.sql.Date;
 public class Catering {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description; //описание
+
+    @Column(name = "visit_date")
     private Date visitDate;
+
+    @Column(name = "rating")
     private Integer rating;
+
+    @Column(name = "price")
     private Double price;
 
     @ManyToOne

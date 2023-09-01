@@ -1,0 +1,47 @@
+<div>
+    <h1>Общепит.....</h1>
+    <p></p>
+    <h3>Фильтр</h3>
+    <form novalidate ng-submit="loadCaterings()">
+        <input class="form-control" type="text" id = "filterName" placeholder="Нaзвание общепита" ng-model="filter.name_part">
+        <p></p>
+        <input class="form-control" type="number" step="any"   placeholder="минимальная цена" ng-model="filter.min_price">
+        <p></p>
+        <input class="form-control" type="number"  step="any" placeholder="максимальная цена" ng-model="filter.max_price">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Фильтровать</button>
+    </form>
+
+
+    <h3> Где вкусно поесть..</h3>
+    {{contextPathTwo}}
+    <nav aria-label="Общепит">
+        <div ng-repeat="c in cateringsPage.content" class = "alert alert-info mt-5">
+            <h3>{{c.name}}</h3>
+            <p>{{c.description}}</p>
+            <p>{{c.visitDate}}</p>
+
+            <a href="#!/details_catering/{{c.id}} " class="btn btn-warning"  >Детальнее</a>
+            <button type="button" class="btn btn-warning" ng-click="showInfoCatering(c.id)">Инфо(алерт)</button>
+            <a href="#!/edit_catering/{{c.id}}" class="btn btn-warning"  >Редактирование</a>
+            <a  class="btn btn-danger"  ng-click="deleteCateringById(c.id)" href="#!/caterings" >Удалить</a>
+        </div>
+        <p></p>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li ng-repeat = "p in navList" class="page-item">
+                    <a class="page-link" ng-click = "loadCaterings(p)">{{p}}</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p></p>
+        <h3>Pagination</h3>
+        </td>
+        <button class="btn btn-primary" ng-click="loadCaterings(1)">Load First Page</button>
+        <button class="btn btn-primary" ng-click="loadCaterings(2)">Load Second Page</button>
+        </td>
+        <p></p>
+        <p></p>
+    </nav>
+</div>

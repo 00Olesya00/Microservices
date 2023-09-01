@@ -1,0 +1,19 @@
+<div class="container mt-5 mb-5">
+    <h1> Добавление достопримечательности</h1>
+    <form novalidate ng-submit="createSight()">
+
+         <input type="text" ng-model="newSight.name" placeholder="Введите название достопримечательности" class="form-control"><br>
+        <textarea  ng-model="newSight.description" placeholder="Введите описание путешествия" class="form-control"></textarea><br>
+        <input type="text" ng-model="newSight.location" placeholder="Введите место находждения достопримечательности" class="form-control"><br>
+        <input type="text" ng-model="newSight.coordinates" placeholder="Введите координаты" class="form-control"><br>
+        <input type="number" step="any" ng-model="newSight.price" placeholder="Введите цену" class="form-control"><br>
+        <input type="text" ng-model="newSight.price_info" placeholder="Введите информацию о цене" class="form-control"><br>
+        <input type="text" ng-model="newSight.url" placeholder="Введите ссылку на достопримечательность" class="form-control"><br>
+
+
+        <a  class="btn btn-success"  ng-click="createSight()" href="#!/sights" >Добавить достопримечательность!</a>
+        <li class="nav-item"><a href="#!/sights" class="nav-link"> Показать список достопримечательностей</a></li>
+
+
+    </form>
+</div>

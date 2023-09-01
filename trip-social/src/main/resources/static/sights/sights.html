@@ -1,0 +1,46 @@
+<div>
+    <h1>Достопримечательность.....</h1>
+    <p></p>
+    <h3>Фильтр</h3>
+    <form novalidate ng-submit="loadSights()">
+        <input class="form-control" type="text" id = "filterName" placeholder="Нaзвание достопримечательности" ng-model="filter.name_part">
+        <p></p>
+        <input class="form-control" type="number" step="any"   placeholder="минимальная цена" ng-model="filter.min_price">
+        <p></p>
+        <input class="form-control" type="number"  step="any" placeholder="максимальная цена" ng-model="filter.max_price">
+        <p></p>
+        <button type="submit" class="btn btn-primary">Фильтровать</button>
+    </form>
+
+    <h3> Достопримечательность</h3>
+    {{contextPathTwo}}
+    <nav aria-label="Достопримечательность">
+        <div ng-repeat="s in sightsPage.content" class = "alert alert-info mt-5">
+            <h3>{{s.name}}</h3>
+            <p>{{s.description}}</p>
+
+
+            <a href="#!/details_sight/{{s.id}} " class="btn btn-warning"  >Детальнее</a>
+            <button type="button" class="btn btn-warning" ng-click="showInfoSight(s.id)">Инфо(алерт)</button>
+            <a href="#!/edit_sight/{{s.id}}" class="btn btn-warning"  >Редактирование</a>
+            <a  class="btn btn-danger"  ng-click="deleteSightById(s.id)" href="#!/sights" >Удалить</a>
+        </div>
+        <p></p>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li ng-repeat = "p in navList" class="page-item">
+                    <a class="page-link" ng-click = "loadSights(p)">{{p}}</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p></p>
+        <h3>Pagination</h3>
+        </td>
+        <button class="btn btn-primary" ng-click="loadSights(1)">Load First Page</button>
+        <button class="btn btn-primary" ng-click="loadSights(2)">Load Second Page</button>
+        </td>
+        <p></p>
+        <p></p>
+    </nav>
+</div>
